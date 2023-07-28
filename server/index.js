@@ -34,8 +34,11 @@ mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    dbName: "ecomvision",
   })
   .then(() => {
+    console.log("Connected to mongodb");
+
     app.listen(PORT, () => {
       console.log(`Server Port: ${PORT}`);
     });
